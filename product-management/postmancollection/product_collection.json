@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "e1f30959-0e62-4558-881d-22e90896237e",
+		"name": "learnings",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customer-management",
+			"item": [
+				{
+					"name": "getAllustomers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8010/custmgmt/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"custmgmt",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createNewCustomer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"abc yadav\", \"email\" :\"abc.yadav@yahoo.com\",\"phoneNumber\":\"8899774455\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8010/custmgmt/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"custmgmt",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewAddress",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"houseName\":\"231\",\"block\":\"A\", \"city\":\"New delhi\", \"state\":\"Delhi\",\"pincode\":\"110056\",\"landmark\":\"Nagli dairy\",\"type\":\"Current\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers/11/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"11",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNewAddress Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"houseName\":\"194\",\"block\":\"BE\",\"street\":\"5\", \"city\":\"New delhi\", \"state\":\"Delhi\",\"pincode\":\"110064\",\"landmark\":\"Near Mohanmandir\",\"type\":\"House\"}"
+						},
+						"url": {
+							"raw": "http://localhost:8010/custmgmt/customers/1/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"custmgmt",
+								"customers",
+								"1",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get customer detail by customer id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Coca cola\",\"category\":\"bevrage\",\"brand\":\"Cola\",\"price\":50}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product-management",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"Snacks\",\r\n    \"brand\": \"BE\",\r\n    \"size\": 10,\r\n    \"price\": 23\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order by order id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders?customerId=3158740636",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "3158740636"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "place order by customer id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"1215\",\r\n        \"productIdName\": \"MB\",\r\n        \"quantity\": 2,\r\n        \"unitPrice\": 10.0,\r\n        \"subTotal\": 0.0\r\n    },\r\n      {\r\n        \"id\": \"1213\",\r\n        \"productIdName\": \"CB\",\r\n        \"quantity\": 10,\r\n        \"unitPrice\": 50.0,\r\n        \"subTotal\": 500.0\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders/customer002",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								"customer002"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

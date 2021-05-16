@@ -1,4 +1,4 @@
-package com.product.management.model;
+package com.sharma.nks.products.management.model;
 
 import lombok.Data;
 
@@ -15,9 +15,11 @@ public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long productId;
+    private String name;
     private String category;
     private String size;
     private String brand;
-    private Long price;
+    private Long maxRetailPrice;
+    private Long discount;
 
 }

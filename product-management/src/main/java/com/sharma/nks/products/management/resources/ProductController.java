@@ -1,7 +1,7 @@
-package com.product.management.resources;
+package com.sharma.nks.products.management.resources;
 
-import com.product.management.model.Product;
-import com.product.management.services.ProductService;
+import com.sharma.nks.products.management.model.Product;
+import com.sharma.nks.products.management.services.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

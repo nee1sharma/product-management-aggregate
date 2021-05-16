@@ -62,16 +62,16 @@
         <appender-ref ref="rolling-file"/>
     </root>
 
-    <logger name="com.product.management.services" level="debug" additivity="false">
+    <logger name="com.sharma.nks.products.management.services" level="debug" additivity="false">
         <appender-ref ref="rolling-file"/>
         <appender-ref ref="console"/>
     </logger>
 
-    <logger name="com.product.management.logging" level="debug" additivity="false">
+    <logger name="com.sharma.nks.products.logging" level="debug" additivity="false">
         <appender-ref ref="plainTextPattern"/>
     </logger>
 
-    <logger name="com.product.management.messaging.kafka" level="debug" additivity="false">
+    <logger name="com.sharma.nks.products.messaging.kafka" level="debug" additivity="false">
         <appender-ref ref="plainText"/>
     </logger>
 </configuration>

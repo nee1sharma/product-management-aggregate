@@ -21,9 +21,9 @@
             <artifactId>spring-kafka</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <scope>provided</scope>
+            <groupId>com.sharma.nks.products</groupId>
+            <artifactId>logging</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

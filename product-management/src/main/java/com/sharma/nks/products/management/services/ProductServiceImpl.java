@@ -1,14 +1,14 @@
-package com.product.management.services;
+package com.sharma.nks.products.management.services;
 
 import java.util.List;
 import java.util.Optional;
 
+import com.sharma.nks.products.management.model.Product;
+import com.sharma.nks.products.management.repository.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.product.management.model.Product;
-import com.product.management.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 import com.sharma.nks.products.messaging.kafka.MessageProducer;
 

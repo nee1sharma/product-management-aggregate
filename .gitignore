@@ -3,7 +3,7 @@
 .classpath
 .project
 .settings/
-/logs/
-
+/logs/*
+*.log
 .idea/
 *.iml

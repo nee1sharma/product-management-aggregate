@@ -1,4 +1,4 @@
-package com.product.management.services;
+package com.sharma.nks.products.management.services;
 
 public class ProductNotFoundException extends RuntimeException {
 

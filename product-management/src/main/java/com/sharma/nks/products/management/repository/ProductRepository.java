@@ -1,8 +1,7 @@
-package com.product.management.repository;
+package com.sharma.nks.products.management.repository;
 
+import com.sharma.nks.products.management.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.product.management.model.Product;
 
 public interface ProductRepository extends JpaRepository<Product,Long> {
 	
