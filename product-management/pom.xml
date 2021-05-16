@@ -23,6 +23,14 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources/</directory>
+                <excludes>
+                    <exclude>postmancollection/**</exclude>
+                </excludes>
+            </resource>
+        </resources>
     </build>
 
 
@@ -39,6 +47,14 @@
             <groupId>com.sharma.nks.products</groupId>
             <artifactId>messaging</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback.contrib</groupId>
+            <artifactId>logback-jackson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback.contrib</groupId>
+            <artifactId>logback-json-classic</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
