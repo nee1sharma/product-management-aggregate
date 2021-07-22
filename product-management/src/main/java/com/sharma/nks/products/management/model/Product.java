@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Data
 public class Product implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long productId;
     private String name;
     private String category;

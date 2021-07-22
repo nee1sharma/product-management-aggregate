@@ -1,4 +1,4 @@
-package com.sharma.nks.products.validators;
+package com.sharma.nks.products.validators.validators;
 
 public interface ValidationResult {
 

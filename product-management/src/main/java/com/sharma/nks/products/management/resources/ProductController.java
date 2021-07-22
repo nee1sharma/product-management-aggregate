@@ -1,15 +1,14 @@
 package com.sharma.nks.products.management.resources;
 
-import com.sharma.nks.products.management.model.Product;
 import com.sharma.nks.products.management.services.ProductService;
+import com.sharma.nks.rest.models.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
@@ -17,8 +16,11 @@ public class ProductController {
 
     private final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
 
-    @Autowired
-    private ProductService productService;
+    private final ProductService productService;
+
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Product>> getAllProducts() {
@@ -30,13 +32,14 @@ public class ProductController {
     }
 
     @GetMapping("/{pid}")
-    public Optional<Product> getProductById(@PathVariable("pid") Long productId) {
-        return productService.getProductById(productId);
+    public ResponseEntity<Product> getProductById(@PathVariable("pid") Long productId) {
+        return productService.getProductById(productId).map(ResponseEntity::ok).orElse(null);
     }
 
     @PostMapping
-    public Long saveProduct(@RequestBody Product product) {
+    public ResponseEntity<Long> saveProduct(@RequestBody Product product) {
         LOGGER.debug("Saving new product: {}", product);
-        return productService.saveProduct(product);
+        Long id = productService.saveProduct(product);
+        return ResponseEntity.created(UriComponentsBuilder.newInstance().pathSegment(String.valueOf(id)).build().toUri()).build();
     }
 }
