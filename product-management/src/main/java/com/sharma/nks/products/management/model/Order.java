@@ -23,7 +23,7 @@ public class Order implements Serializable {
     private List<OrderItem> orderItems=new ArrayList<>();
     private String status;
 
-    @Embedded
+    @OneToOne
     // @AttributeOverride(name = "type", column = @Column(name = "order_shipping_address_type"))
     //@AssociationOverride(name = "shippingAddress", joinTable = @JoinTable(name = "order_shipping_address"))
     private Address shippingAddress;

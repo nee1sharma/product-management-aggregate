@@ -6,11 +6,14 @@ import lombok.Data;
 @Data
 public class Address {
     private Long id;
-    private String type;
+    private String houseName;
+    private String block;
     private String address;
     private String area;
-    private int pinCode;
-    private String nearBy;
-    private String phoneNumber;
+    private String landmark;
+    private String type;
+    private int pincode;
+    private String city;
+    private String state;
 }
 

@@ -1,8 +1,8 @@
 package com.sharma.nks.products.management.resources;
 
-import com.sharma.nks.products.management.model.Order;
-import com.sharma.nks.products.management.model.OrderItem;
 import com.sharma.nks.products.management.services.OrderService;
+import com.sharma.nks.rest.models.Order;
+import com.sharma.nks.rest.models.OrderItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import java.util.Optional;
 @RequestMapping("/orders")
 public class OrderController {
 
-    private final Logger logger = LoggerFactory.getLogger(OrderController.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private OrderService orderService;
@@ -23,7 +23,7 @@ public class OrderController {
     @PostMapping("/{customerId}")
     public String placeNewOrder(@RequestBody List<OrderItem> orderItems,
                                 @PathVariable("customerId") String customerId) {
-        logger.debug("Placing order for {} with {} order items in one order", customerId, orderItems.size());
+        LOGGER.debug("Placing order for {} with {} order items in one order", customerId, orderItems.size());
         //TODO: validate customer
         //TODO: validate product name or id
         //TODO: calculate product price, discount and total costs
@@ -32,7 +32,7 @@ public class OrderController {
 
     @GetMapping("/{orderId}")
     public Optional<Order> getOrderDetailByOrderId(@PathVariable("orderId") String orderId) {
-        logger.debug("Get order by orderId {}", orderId);
+        LOGGER.debug("Get order by orderId {}", orderId);
 
         return orderService.getOrderByOrderId(orderId);
     }

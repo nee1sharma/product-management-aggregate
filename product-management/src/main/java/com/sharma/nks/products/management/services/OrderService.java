@@ -1,7 +1,7 @@
 package com.sharma.nks.products.management.services;
 
-import com.sharma.nks.products.management.model.Order;
-import com.sharma.nks.products.management.model.OrderItem;
+import com.sharma.nks.rest.models.Order;
+import com.sharma.nks.rest.models.OrderItem;
 
 import java.util.List;
 import java.util.Optional;

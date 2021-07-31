@@ -6,6 +6,13 @@ app:
   logging:
     request: true
     response: true
+logging:
+  level:
+    com:
+      sharma:
+        nks:
+          products:
+            management: DEBUG
 
 spring:
   jpa:
@@ -16,7 +23,7 @@ spring:
     password: pass
     username: sa
     driverClassName: org.h2.Driver
-    url: jdbc:h2:file:~/testdb
+    url: jdbc:h2:file:~/testdb3  #testdb
   h2:
     console:
       path: /h2

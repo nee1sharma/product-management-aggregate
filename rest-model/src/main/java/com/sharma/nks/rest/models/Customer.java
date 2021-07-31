@@ -12,5 +12,7 @@ public class Customer {
     private String name;
     private String email;
     private String phoneNumber;
+    private Address house;
+
     List<Order> orders=new ArrayList<>();
 }
