@@ -44,11 +44,7 @@ public class OrderServiceImpl implements OrderService {
         order.setCustomerId(customerId);
         order.setId(UniqueIdGenerator.getUniqueId(operatorPrefix));
         order.setOrderedDate(LocalDate.now());
-        Address shippingAddress = new Address();
-        shippingAddress.setAddress(customerId);
-        shippingAddress.setId(101L);
-        order.setShippingAddress(shippingAddress);
-        order.setStatus("delivered");
+        order.setStatus("CREATED");
         order.setOrderItems(orderItems);
         return mapper.mapOrder(order);
     }
