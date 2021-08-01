@@ -1,7 +1,7 @@
 app.name: product
 product.count.max: 100
 app.operator.name: ORDR
-
+app.topic: topic_product_order
 app:
   logging:
     request: true
@@ -30,15 +30,7 @@ spring:
       enabled: true
 
   kafka:
-    consumer:
-      bootstrap-servers: localhost:9092
-      group-id: group_id
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     producer:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
-
-

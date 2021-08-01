@@ -1,4 +1,4 @@
-package com.sharma.nks.products.management.model;
+package com.sharma.nks.products.domain.model;
 
 import lombok.Data;
 
@@ -36,5 +36,8 @@ public class Order implements Serializable {
     private Long totalCost;
     private Long totalDiscount;
     private Long paidAmount;
+
+    @Version
+    private long version;
 
 }

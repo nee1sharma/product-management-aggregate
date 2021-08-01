@@ -1,6 +1,6 @@
 package com.sharma.nks.products.management.services;
 
-import com.sharma.nks.rest.models.Product;
+import com.sharma.nks.products.rest.models.Product;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,5 +14,12 @@ public interface ProductService {
 	 * @param product
 	 * @return
 	 */
-    Long saveProduct(Product product);
+	Product saveProduct(Product product);
+
+	/**
+	 * Save bulk products in one go
+	 * @param List of product
+	 * @return productId : productName in Product list
+	 */
+	List<Product> saveProductInBulk(List<Product> products);
 }

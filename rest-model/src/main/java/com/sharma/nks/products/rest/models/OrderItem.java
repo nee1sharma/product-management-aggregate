@@ -1,4 +1,4 @@
-package com.sharma.nks.rest.models;
+package com.sharma.nks.products.rest.models;
 
 import lombok.Data;
 

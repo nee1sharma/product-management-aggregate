@@ -6,71 +6,19 @@
         <module>messaging</module>
         <module>rest-model</module>
         <module>validation-api</module>
+        <module>domain-model</module>
         <module>product-management</module>
     </modules>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>com.sharma.nks.products</groupId>
+        <artifactId>parent-pom</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath/>
     </parent>
-    <groupId>com.sharma.nks.products</groupId>
     <artifactId>product-management-aggregate</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>product-management-aggregate</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-        <logback.contrib.version>0.1.5</logback.contrib.version>
-        <map-struct.version>1.4.2.Final</map-struct.version>
-        <lombok.version>1.18.18</lombok.version>
-        <map-struct.lombok.version>0.2.0</map-struct.lombok.version>
-    </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>ch.qos.logback.contrib</groupId>
-                <artifactId>logback-jackson</artifactId>
-                <version>${logback.contrib.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>ch.qos.logback.contrib</groupId>
-                <artifactId>logback-json-classic</artifactId>
-                <version>${logback.contrib.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mapstruct</groupId>
-                <artifactId>mapstruct</artifactId>
-                <version>${map-struct.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <profiles>
-        <profile>
-            <id>no-tests</id>
-            <properties>
-                <maven.test.skip>true</maven.test.skip>
-            </properties>
-        </profile>
-        <profile>
-            <id>dev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <spring.profiles.active>dev</spring.profiles.active>
-            </properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties>
-                <spring.profiles.active>prod</spring.profiles.active>
-            </properties>
-        </profile>
-    </profiles>
 </project>

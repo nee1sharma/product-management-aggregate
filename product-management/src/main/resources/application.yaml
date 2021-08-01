@@ -1,3 +1,4 @@
+server.port: 8001
 app.name: product
 product.count.max: 100
 

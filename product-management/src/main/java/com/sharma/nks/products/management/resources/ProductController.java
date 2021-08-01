@@ -1,7 +1,7 @@
 package com.sharma.nks.products.management.resources;
 
 import com.sharma.nks.products.management.services.ProductService;
-import com.sharma.nks.rest.models.Product;
+import com.sharma.nks.products.rest.models.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -37,9 +37,18 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Long> saveProduct(@RequestBody Product product) {
+    public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
         LOGGER.debug("Saving new product: {}", product);
-        Long id = productService.saveProduct(product);
-        return ResponseEntity.created(UriComponentsBuilder.newInstance().pathSegment(String.valueOf(id)).build().toUri()).build();
+        Product savedProduct = productService.saveProduct(product);
+        return ResponseEntity.created(UriComponentsBuilder.newInstance().pathSegment(String.valueOf(savedProduct.getId())).build().toUri())
+                .body(savedProduct);
+    }
+
+    @PostMapping("/bulk")
+    public ResponseEntity<List<Product>> saveProductsBulk(@RequestBody List<Product> products) {
+        LOGGER.debug("Storing bulk products {}", products.size());
+        List<Product> storedProducts = productService.saveProductInBulk(products);
+        LOGGER.debug("{} product stored.", storedProducts.size());
+        return ResponseEntity.accepted().body(storedProducts);
     }
 }

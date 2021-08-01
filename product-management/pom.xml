@@ -71,8 +71,8 @@
         </dependency>
         <dependency>
             <groupId>com.sharma.nks.products</groupId>
-            <artifactId>messaging</artifactId>
-            <version>${project.version}</version>
+            <artifactId>domain-model</artifactId>
+            <version>${parent.version}</version>
         </dependency>
         <dependency>
             <groupId>com.sharma.nks.products</groupId>
@@ -81,21 +81,28 @@
         </dependency>
 
         <dependency>
+            <groupId>com.sharma.nks.products</groupId>
+            <artifactId>messaging</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sharma.nks.products</groupId>
+            <artifactId>logging</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+        <dependency>
             <groupId>ch.qos.logback.contrib</groupId>
             <artifactId>logback-jackson</artifactId>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback.contrib</groupId>
             <artifactId>logback-json-classic</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>

@@ -1,7 +1,6 @@
-package com.sharma.nks.products.management.model;
+package com.sharma.nks.products.domain.model;
 
 import lombok.Data;
-import lombok.Generated;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
