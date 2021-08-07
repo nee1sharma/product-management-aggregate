@@ -15,10 +15,11 @@ public class Inventory {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ElementCollection(fetch = FetchType.LAZY)
-    @MapKeyColumn(name = "productId")
+    @ElementCollection(fetch = FetchType.EAGER)
+    @MapKeyColumn(name = "category_id")
     @Column(name = "units")
-    private Map<Long, Integer> productIdToUnits = new HashMap<>(MAX);
+    @CollectionTable(name="INVENTORY_PRODUCT_CATEGORY", joinColumns = @JoinColumn(name="id"))
+    private Map<String, Integer> productCategoryToUnits = new HashMap<>(MAX);
     private int capacity;
     private Type type;
 
